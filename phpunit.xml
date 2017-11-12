@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.de/manual/6.0/en/appendixes.configuration.html, XmlUnboundNsPrefix -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.0/phpunit.xsd"
+         colors="true"
+         bootstrap="tests/tests_bootstrap.php"
+		 cacheTokens="false"
+         printerClass="PHPUnit\TextUI\ResultPrinter"
+         testSuiteLoaderClass="PHPUnit\Runner\StandardTestSuiteLoader"
+         verbose="true"
+>
+
+  <!-- logging>
+    <log type="coverage-clover" target="build/logs/clover.xml"/>
+  </logging -->
+  <testsuites>
+    <testsuite name="MiW Results testing">
+      <directory suffix="Test.php">tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist>
+      <directory>src/</directory>
+      <exclude>
+        <directory>./tests/</directory>
+        <directory>./bin/</directory>
+        <directory>./vendor/</directory>
+        <file>./src/Utils.php</file>
+        <!--<file>./src/Install.php</file>-->
+      </exclude>
+    </whitelist>
+  </filter>
+
+</phpunit>
