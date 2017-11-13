@@ -86,6 +86,12 @@ if('--user'== $argv[1]){
         $entityManager->flush();
 
     }
+    if(in_array('--json',$argv)){
+        $user = $entityManager->getRepository(Users::class)->findAll();
+
+        echo json_encode($user,JSON_PRETTY_PRINT);
+
+    }
 }
 elseif ('--results'== $argv[1]){
 
@@ -153,4 +159,27 @@ elseif ('--results'== $argv[1]){
 
     }
 
+    if(in_array('--json',$argv)){
+        $user = $entityManager->getRepository(Results::class)->findAll();
+
+        echo json_encode($user,JSON_PRETTY_PRINT);
+
+    }
+
 }
+if('--help'== $argv[1]){
+    echo "--json -> Objenemos un json con todos los datos";
+    echo "\n";
+    echo "--<user|results> --help -> Ayuda de el comando usuario o resultado";
+    echo "\n";
+
+
+}
+
+if(in_array('--json',$argv)){
+    $user = $entityManager->getRepository(Results::class)->findAll();
+
+    echo json_encode($user,JSON_PRETTY_PRINT);
+
+}
+
