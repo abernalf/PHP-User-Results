@@ -15,17 +15,17 @@ $entityManager = getEntityManager();
 
 if('--user'== $argv[1]){
     if('--help'==$argv[2]){
-        echo "--add:";
+        echo "\e[31m --add \e[0m";
         echo "\n";
         echo "php src/script.php --user --add <USERNAME> <EMAIL> <PASSWORD>";
         echo "\n";
         echo "\n";
-        echo "--delete:";
+        echo "\e[31m --delete \e[0m";
         echo "\n";
         echo "php src/script.php --user --delete <ID>";
         echo "\n";
         echo "\n";
-        echo "--update:";
+        echo "\e[31m --update \e[0m";
         echo "\n";
         echo "php src/script.php --user --update <ID> --name <NAME> --email <EMAIL> --password <PASSWORD>";
         echo "\n";
@@ -96,17 +96,17 @@ if('--user'== $argv[1]){
 elseif ('--results'== $argv[1]){
 
     if('--help'==$argv[2]){
-        echo "--add:";
+        echo "\e[31m --add \e[0m";
         echo "\n";
         echo "php src/script.php --results --add <USER ID> <RESUTS>";
         echo "\n";
         echo "\n";
-        echo "--delete:";
+        echo "--\e[31m --delete \e[0m";
         echo "\n";
         echo "php src/script.php --results --delete <ID>";
         echo "\n";
         echo "\n";
-        echo "--update:";
+        echo "\e[31m --update \e[0m";
         echo "\n";
         echo "php src/script.php --results --update <ID> --results <RESULTS>";
         echo "\n";
@@ -168,11 +168,10 @@ elseif ('--results'== $argv[1]){
 
 }
 if('--help'== $argv[1]){
-    echo "--json -> Objenemos un json con todos los datos";
+    echo "\033[31m --json \033[0m -> Objenemos un json con todos los datos";
     echo "\n";
-    echo "--<user|results> --help -> Ayuda de el comando usuario o resultado";
+    echo "\e[31m --<user|results> --help \e[0m -> Ayuda de el comando usuario o resultado";
     echo "\n";
-
 
 }
 
@@ -182,4 +181,5 @@ if(in_array('--json',$argv)){
     echo json_encode($user,JSON_PRETTY_PRINT);
 
 }
+
 
