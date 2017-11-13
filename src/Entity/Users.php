@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="token_UNIQUE", columns={"token"})})
  * @ORM\Entity
  */
-class Users
+class Users implements \JsonSerializable
 {
     /**
      * @var integer
@@ -190,5 +190,23 @@ class Users
     }
 
 
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getUsername(),
+            'mail' => $this->getEmail(),
+            'token'=> $this->getToken(),
+            'lastLogin' => $this->getLastLogin(),
+            'password' => $this->getPassword()
+        ];
+    }
 }
 

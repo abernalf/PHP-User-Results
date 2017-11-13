@@ -45,6 +45,83 @@ class Results
      */
     private $users;
 
+    /**
+     * Results constructor.
+     * @param int $result
+     * @param Users $users
+     */
+    public function __construct($result, Users $users)
+    {
+        $this->result = $result;
+        $this->users = $users;
+    }
+
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * @param int $result
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * @param DateTime $time
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+    }
+
+    /**
+     * @return Users
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param Users $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
+
 
 }
 
