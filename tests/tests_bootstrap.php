@@ -29,4 +29,4 @@ require_once __DIR__ . '/../bootstrap.php';
 mt_srand();
 
 // Create/update tables in the test database
-MiW\Results\Utils::updateSchema();
+// MiW\Results\Utils::updateSchema();
