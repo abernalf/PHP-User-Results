@@ -20,7 +20,7 @@ class UsersTest extends TestCase
         $this->assertEquals("Pepe",$user->getUsername());
     }
 
-    public function testGetters(){
+    public function testGettersAndSetters(){
 
         $user = new Users("Pepe","123","123");
         $user->setToken("123");
